@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "dependencyDashboard": false,
+  "enabledManagers": ["npm"],
+  "timezone": "Asia/Tokyo",
+  "prConcurrentLimit": 5,
+  "packageRules": [
+    {
+      "automerge": true,
+      "matchPackageNames": [
+        "/^@types//"
+      ]
+    },
+    {
+      "automerge": true,
+      "matchUpdateTypes": ["patch"]
+    }
+  ]
+}
