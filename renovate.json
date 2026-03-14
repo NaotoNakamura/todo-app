@@ -4,6 +4,7 @@
     "config:recommended"
   ],
   "dependencyDashboard": false,
+  "dependencyDashboardApproval": false,
   "enabledManagers": ["npm"],
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 5,
