@@ -1,3 +1,5 @@
+import LoginButton from "./loginButton";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -7,6 +9,7 @@ export default function Home() {
             To get started, edit the page.tsx file.
           </h1>
         </div>
+        <LoginButton />
       </main>
     </div>
   );
