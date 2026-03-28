@@ -4,5 +4,6 @@ FactoryBot.define do
     started_at { "2025-11-09 07:55:35" }
     finished_at { "2025-11-09 07:55:35" }
     is_completed { false }
+    association :user
   end
 end
