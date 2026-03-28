@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :tasks
+
+  namespace :api do
+    post 'auth/google', to: 'auth#google'
+  end
 end
