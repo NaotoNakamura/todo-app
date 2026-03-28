@@ -1,4 +1,6 @@
 class Api::AuthController < ApplicationController
+  skip_before_action :authenticate_request
+
   def google
     validator = GoogleIDToken::Validator.new
     begin
