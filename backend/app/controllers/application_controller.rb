@@ -4,19 +4,19 @@ class ApplicationController < ActionController::API
   private
 
   def authenticate_request
-    header = request.headers['Authorization']
-    token = header&.split(' ')&.last
+    header = request.headers["Authorization"]
+    token = header&.split(" ")&.last
 
     if token.blank?
-      render json: { error: 'Authorization header missing' }, status: :unauthorized
+      render json: { error: "Authorization header missing" }, status: :unauthorized
       return
     end
 
     begin
-      decoded = JWT.decode(token, ENV['JWT_SECRET_KEY'], true, { algorithm: 'HS256' })
-      @current_user = User.find(decoded[0]['user_id'])
+      decoded = JWT.decode(token, ENV["JWT_SECRET_KEY"], true, { algorithm: "HS256" })
+      @current_user = User.find(decoded[0]["user_id"])
     rescue JWT::DecodeError, ActiveRecord::RecordNotFound
-      render json: { error: 'Invalid token' }, status: :unauthorized
+      render json: { error: "Invalid token" }, status: :unauthorized
     end
   end
 

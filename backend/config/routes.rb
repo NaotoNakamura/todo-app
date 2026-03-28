@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   resources :tasks
 
   namespace :api do
-    post 'auth/google', to: 'auth#google'
+    post "auth/google", to: "auth#google"
   end
 end

@@ -37,6 +37,6 @@ class TasksController < ApplicationController
   end
 
   def record_not_found
-    render json: { error: 'Task not found' }, status: :not_found
+    render json: { error: "Task not found" }, status: :not_found
   end
 end
