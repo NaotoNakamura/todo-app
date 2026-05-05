@@ -11,17 +11,18 @@
 
 ## コマンド
 
-### バックエンド (`cd backend`)
+### バックエンド（Dockerコンテナ上で実行）
+
+バックエンド関連のコマンドは必ず `docker compose exec app` 経由でコンテナ上で実行すること。
 
 ```bash
-bundle install
-rails db:create && rails db:migrate
-rails server -b 0.0.0.0          # ポート 3000 で起動（Docker では 3001 にマッピング）
+docker compose exec app bundle install
+docker compose exec app rails db:create && docker compose exec app rails db:migrate
 
-bundle exec rspec                              # 全テスト実行
-bundle exec rspec spec/path/to_spec.rb         # 単一ファイルのテスト実行
-bundle exec rubocop                            # リント
-bundle exec brakeman                           # セキュリティスキャン
+docker compose exec app bundle exec rspec                              # 全テスト実行
+docker compose exec app bundle exec rspec spec/path/to_spec.rb         # 単一ファイルのテスト実行
+docker compose exec app bundle exec rubocop                            # リント
+docker compose exec app bundle exec brakeman                           # セキュリティスキャン
 ```
 
 ### フロントエンド (`cd frontend`)
